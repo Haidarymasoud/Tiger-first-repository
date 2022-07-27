@@ -1,3 +1,4 @@
+@test
 Feature: End to End Test
 
   Scenario: 
@@ -8,18 +9,24 @@ Feature: End to End Test
     Then status 200
     And print response
     * def generatedToken = response.token
+    And print generatedToken
+    * def generator = Java.type('tiger_api_project.tiger_api_project_tek.DataGenerator')
+    * def email = generator.getEmail()
+    * def firstName = generator.getFirstName()
+    * def lastName = generator.getLastName()
+    * def DOB = generator.getDoB()
     Given path "/api/accounts/add-primary-account"
     And request
       """
       {
-      "email": "QandNOOR2@yahoo.com",
-      "firstName": "Rahman2",
-      "lastName": "Ahmad",
+      "email": "string",
+      "firstName": "string",
+      "lastName": "string",
       "title": "Mr.",
       "gender": "MALE",
       "maritalStatus": "MARRIED",
-      "employmentStatus": "Student",
-      "dateOfBirth": "1999-07-07",
+      "employmentStatus": "string",
+      "dateOfBirth": "2022-07-27T00:54:57.474Z",
       "new": true
       }
       """
@@ -27,9 +34,9 @@ Feature: End to End Test
     When method post
     Then status 201
     And print response
-     * def primaryPersonId = result.response.id
+        * def ID = response.id
     Given path "/api/accounts/add-account-addess"
-    And param primaryPersonId = primaryPersonId
+    And param primaryPersonId = ID
     And request
       """
       {
@@ -42,8 +49,7 @@ Feature: End to End Test
       "current": true
       }
       """
-     And header Authorization = "Bearer " + generatedToken
-     When method post
-     Then status 201
-     And print response 
-#Add change in the project 
+    And header Authorization = "Bearer " + generatedToken
+    When method post
+    Then status 201
+    And print response
