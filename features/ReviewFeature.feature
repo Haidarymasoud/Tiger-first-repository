@@ -1,4 +1,4 @@
-@smoke
+@Test
 Feature: Generate Token, add new Account, Add address, Add phone Number and Car to your created Account.
 
   Scenario: End to End Account Creation.

@@ -8,7 +8,7 @@ import com.ibm.icu.text.SimpleDateFormat;
 public class DataGenerator {
 	
 	Faker faker = new Faker();
-					//------------------------ PRIMARY ACCOUNT ------------------------\\
+	// PRIMARY ACCOUNT 
 	
 	public static String getEmail() {
 		Faker faker = new Faker();
@@ -42,7 +42,7 @@ public class DataGenerator {
 		return faker.job().title();
 	}
 	
-					//------------------------ ADDRESS ------------------------\\
+	//ADDRESS 
 	
 	public static String getCountry() {
 		Faker faker = new Faker();
@@ -69,8 +69,7 @@ public class DataGenerator {
 		return faker.address().countryCode();
 	}
 	
-					//------------------------ PHONE ------------------------\\
-	
+//PHONE 
 	public static String getPhone() {
 		Faker faker = new Faker();
 		return faker.phoneNumber().cellPhone();
