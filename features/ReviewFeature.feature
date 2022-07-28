@@ -66,7 +66,7 @@ Feature: Generate Token, add new Account, Add address, Add phone Number and Car 
     When method post
     Then status 201
     And print response
-    * def generator = Java.type('tiger.api.test.assignment.DataGenerator')
+    * def generator = Java.type('tiger_api_project.tiger_api_project_tek.DataGenerator')
     * def phoneNumber = generator.getPhone()
     * def phoneExtension = generator.getPhoneExtension()
     
