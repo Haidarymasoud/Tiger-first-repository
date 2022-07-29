@@ -7,7 +7,7 @@ public class testRunner {
 	
 	@Karate.Test
 	public Karate runTest() {
-		return Karate.run(".\\features").tags("test");	
+		return Karate.run(".\\features").tags("smoke");	
 	}
 
 }
