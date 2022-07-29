@@ -2,7 +2,7 @@ package RunnerPackage;
 
 import com.intuit.karate.junit5.Karate;
 
-public class testRunner {
+public class DocumentTest {
 
 	
 	@Karate.Test
